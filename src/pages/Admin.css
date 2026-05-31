@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(180deg, #0b0b0f, #15151d);
+  color: #fff;
+}
+
+/* CONTAINER */
+.admin-container {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+/* TITLE */
+.admin-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #f5f5f5;
+  margin-bottom: 25px;
+}
+
+/* LOGOUT */
+.logout-button {
+  display: block;
+  margin: 0 auto 25px;
+  background: transparent;
+  border: 1px solid #f72585;
+  color: #f72585;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.logout-button:hover {
+  background: #f72585;
+  color: white;
+}
+
+/* FORM */
+.admin-form {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 30px;
+}
+
+/* INPUTS */
+.admin-form input[type="text"],
+.admin-form input[type="date"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  outline: none;
+}
+
+.admin-form input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* CHECKBOX */
+.admin-form label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+/* BUTTON */
+.admin-form button {
+  background: linear-gradient(90deg, #f72585, #7209b7);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.admin-form button:hover {
+  transform: scale(1.02);
+}
+
+/* CARD CONCERT */
+.concert-card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 18px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.concert-card:hover {
+  transform: translateY(-3px);
+}
+
+/* STATUS */
+.status-open {
+  color: #4ade80;
+  font-weight: bold;
+}
+
+.status-soldout {
+  color: #f87171;
+  font-weight: bold;
+}
+
+/* DELETE BUTTON */
+.delete-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #ff4d4d;
+  color: white;
+}

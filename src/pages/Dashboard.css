@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+}
+
+.dashboard {
+  min-height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1526481280695-3c687fd5432c");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+}
+
+.content h1 {
+  font-size: 60px;
+  letter-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.content p {
+  color: #e5e5e5;
+  font-style: italic;
+}
+
+.panel {
+  margin-top: 40px;
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+}
+
+.panel h2 {
+  margin-bottom: 10px;
+  font-weight: 400;
+}
+
+.panel button {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border: none;
+  background: #b08d57;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 8px;
+  letter-spacing: 1px;
+}
+
+.panel button:hover {
+  background: #8c6f44;
+}

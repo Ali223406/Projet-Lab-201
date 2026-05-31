@@ -1,0 +1,103 @@
+.home {
+  min-height: 100vh;
+  background: #0b0b0f;
+  color:  rgb(70, 1, 1);
+  font-family: serif;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background-image: url("/images/homelana.jpeg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* overlay cinéma */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.068);
+}
+
+/* contenu */
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 50px;
+
+
+  z-index: 2;
+}
+.hero-content h2 {
+  font-size: 48px;
+  letter-spacing: 4px;
+  margin-bottom: 150px;
+ 
+}
+
+.artist-title {
+  width: 400px;
+  max-width: 90%;
+  margin-bottom: 200px;
+
+  opacity: 0.9;
+
+  filter: contrast(1.15) brightness(1.05)
+          drop-shadow(0 25px 50px rgba(0,0,0,0.8));
+
+  transition: transform 0.4s ease;
+}
+
+.album {
+  font-size: 40px;
+  color:   #c8a27ab6;
+  letter-spacing: 6px;
+  margin-top: 10px;
+}
+
+.subtitle {
+  font-style: italic;
+  opacity: 0.8;
+  margin-top: 10px;
+}
+
+/* CTA */
+.cta {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  
+}
+
+.cta button {
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.219);
+  background: transparent;
+  color: rgb(206, 204, 204);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cta button:hover {
+  background: white;
+  color: black;
+}
+
+/* INFO SECTION */
+.info-section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #111;
+}
+
+.info-section h3 {
+  color: #f5d0c5;
+}
+
