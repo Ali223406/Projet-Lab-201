@@ -14,7 +14,7 @@ export default function Tour() {
         position: "relative",
       }}
     >
-      {/* overlay pour lisibilité */}
+      {/* overlay pour lisibilite*/}
       <div
         style={{
           position: "absolute",
