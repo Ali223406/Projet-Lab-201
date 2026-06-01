@@ -9,8 +9,11 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url("/images/lana1.jpeg");
   align-items: center;
   justify-content: center;
+
+
 }
 
 /* HEADER */
@@ -22,12 +25,12 @@ body {
 .login-title {
   font-size: 36px;
   font-weight: 300;
-  color: #ffffff;
+  color: rgba(109, 3, 3, 0.712);
   letter-spacing: 2px;
 }
 
 .login-subtitle {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(109, 3, 3, 0.712);
   font-size: 14px;
 }
 
@@ -56,14 +59,14 @@ body {
   border-radius: 12px;
 
   background: rgba(255, 255, 255, 0.08);
-  color: white;
+  color: rgba(109, 3, 3, 0.712);
 
   outline: none;
   font-size: 14px;
 }
 
 .login-input::placeholder {
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(71, 16, 16, 0.4);
 }
 
 /* BUTTON */
@@ -74,7 +77,7 @@ body {
   border: none;
   border-radius: 12px;
 
-  background: linear-gradient(90deg, #f72585, #7209b7);
+  background: rgba(128, 6, 6, 0.767);
   color: white;
 
   font-weight: bold;

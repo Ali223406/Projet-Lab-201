@@ -1,51 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { db, auth } from "../service/firebase/firebase-config";
-import {
-  collection,
-  getDocs,
-  addDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { signOut } from "firebase/auth";
 import "./Admin.css";
 
 export default function Admin() {
-  const [concerts, setConcerts] = useState([]);
   const [ville, setVille] = useState("");
   const [date, setDate] = useState("");
   const [lieu, setLieu] = useState("");
   const [pays, setPays] = useState("");
   const [soldOut, setSoldOut] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  const fetchConcerts = async () => {
-    setLoading(true);
-
-    try {
-      const snapshot = await getDocs(collection(db, "concerts"));
-
-      const list = snapshot.docs.map((docItem) => ({
-        id: docItem.id,
-        ...docItem.data(),
-      }));
-
-      setConcerts(list);
-    } catch (error) {
-      console.error("Error fetching concerts:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchConcerts();
-  }, []);
 
   const handleAddConcert = async (e) => {
     e.preventDefault();
 
-    if (!ville || !date || !lieu || !pays) return;
+    if (!ville || !date || !lieu || !pays) {
+      alert("Veuillez remplir tous les champs");
+      return;
+    }
 
     try {
       await addDoc(collection(db, "concerts"), {
@@ -56,47 +28,40 @@ export default function Admin() {
         soldOut,
       });
 
+      alert("Concert ajouté !");
+
       setVille("");
       setDate("");
       setLieu("");
       setPays("");
       setSoldOut(false);
-
-      fetchConcerts();
-    } catch (error) {
-      console.error("Error adding concert:", error);
-    }
-  };
-
-  const handleDeleteConcert = async (id) => {
-    try {
-      await deleteDoc(doc(db, "concerts", id));
-      fetchConcerts();
-    } catch (error) {
-      console.error("Error deleting concert:", error);
-    }
-  };
-
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      window.location.href = "/";
     } catch (error) {
       console.error(error);
     }
   };
 
+  const handleLogout = async () => {
+    await signOut(auth);
+    window.location.href = "/";
+  };
+
   return (
     <div className="admin-container">
-      <h2 className="admin-title">
-        Admin Dashboard ({concerts.length})
-      </h2>
+      <h1 className="admin-title">
+        Ajouter une date de tournée
+      </h1>
 
-      <button className="logout-button" onClick={handleLogout}>
+      <button
+        className="logout-button"
+        onClick={handleLogout}
+      >
         Logout
       </button>
 
-      <form className="admin-form" onSubmit={handleAddConcert}>
+      <form
+        className="admin-form"
+        onSubmit={handleAddConcert}
+      >
         <input
           type="text"
           placeholder="Ville"
@@ -112,7 +77,7 @@ export default function Admin() {
 
         <input
           type="text"
-          placeholder="Lieu"
+          placeholder="Lieu / Festival"
           value={lieu}
           onChange={(e) => setLieu(e.target.value)}
         />
@@ -133,51 +98,10 @@ export default function Admin() {
           Sold Out
         </label>
 
-        <button type="submit">Add Concert</button>
+        <button type="submit">
+          Ajouter la date
+        </button>
       </form>
-
-      {loading ? (
-        <p>Loading concerts...</p>
-      ) : concerts.length === 0 ? (
-        <p>Aucun concert enregistré.</p>
-      ) : (
-        <ul>
-          {concerts.map((concert) => (
-            <li className="concert-card" key={concert.id}>
-              <h4>{concert.ville}</h4>
-
-              <p>Date : {concert.date}</p>
-              <p>Pays : {concert.pays}</p>
-              <p>Lieu : {concert.lieu}</p>
-
-              <p
-                className={
-                  concert.soldOut
-                    ? "status-soldout"
-                    : "status-open"
-                }
-              >
-                {concert.soldOut
-                  ? "🔴 Sold Out"
-                  : "🟢 Disponible"}
-              </p>
-
-              <button
-                className="logout-button"
-                onClick={() => {
-                  if (
-                    window.confirm("Supprimer ce concert ?")
-                  ) {
-                    handleDeleteConcert(concert.id);
-                  }
-                }}
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 }

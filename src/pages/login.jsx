@@ -18,7 +18,7 @@ export default function Login() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
 
-      alert("Login successful!");
+     
       navigate("/dashboard");
     } catch (error) {
       console.error("Login error:", error);

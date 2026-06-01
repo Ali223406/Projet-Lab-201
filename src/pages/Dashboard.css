@@ -5,7 +5,7 @@ body {
 
 .dashboard {
   min-height: 100vh;
-  background-image: url("https://images.unsplash.com/photo-1526481280695-3c687fd5432c");
+  background-image:url("/images/lana1.jpeg");
   background-size: cover;
   background-position: center;
   position: relative;
@@ -13,18 +13,19 @@ body {
   align-items: center;
   justify-content: center;
 }
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-}
-
 .content {
   position: relative;
   text-align: center;
   color: #fff;
   max-width: 700px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.123);
+  z-index: 1;
+  pointer-events: none; /* 🔥 permet de cliquer à travers */
 }
 
 .content h1 {
@@ -44,7 +45,9 @@ body {
   padding: 30px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 0, 0.4);
+  background-image: url("/images/lana1.jpeg");
+  background-size: cover;
+  background-position: center;
   border-radius: 16px;
 }
 
@@ -57,7 +60,7 @@ body {
   margin-top: 20px;
   padding: 12px 20px;
   border: none;
-  background: #b08d57;
+  background:rgba(128, 6, 6, 0.767);
   color: white;
   font-size: 14px;
   cursor: pointer;
@@ -67,4 +70,144 @@ body {
 
 .panel button:hover {
   background: #8c6f44;
+}
+.ticket-divider {
+  width: 1px;
+  height: 60px;
+  background: rgba(255,255,255,0.2);
+  margin: 0 20px;
+}
+.concert-list {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-image: url("/images/lana1.jpeg");
+}
+
+.ticket-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  background: rgba(255, 255, 255, 0.336);
+  backdrop-filter: blur(12px);
+
+  border-left: 6px solid #c8a27a;
+
+  padding: 20px 25px;
+  border-radius: 18px;
+
+  transition: 0.3s ease;
+}
+.ticket-city,
+.ticket-info,
+.ticket-status,
+.ticket-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ticket-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+}
+
+.ticket-city h3 {
+  margin: 0;
+  color: #c8a27a;
+  font-size: 24px;
+}
+
+.ticket-city span {
+  color: #8b6464bd;
+  font-size: 14px;
+}
+
+.ticket-info {
+  text-align: center;
+}
+
+.ticket-info p {
+  margin: 4px 0;
+  color: rgb(119, 83, 83);
+}
+.ticket-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+.ticket-status {
+  min-width: 120px;
+  text-align: right;
+}
+
+.status-open {
+  background: #15803d;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+.status-soldout {
+  background: #ce2828ef;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+/* EDIT */
+.edit-btn {
+  background: transparent;
+  border: 1px solid #c8a27a;
+  color: #c8a27a;
+}
+
+.edit-btn:hover {
+  background: #c8a27a;
+  color: black;
+}
+.edit-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 9999; /* 🔥 AU-DESSUS DE TOUT */
+
+  background: rgba(0, 0, 0, 0.95);
+  padding: 25px;
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  width: 320px;
+}
+
+/* DELETE */
+.delete-btn {
+  background: transparent;
+  border: 1px solid #ce2828ef;
+  color: #ce2828ef;
+}
+
+.delete-btn:hover {
+  background: #ce2828ef;
+  color: white;
 }

@@ -7,6 +7,7 @@ import Blog from "./pages/Blog";
 import Artist from "./pages/Artist";
 
 import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
 
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -24,10 +25,21 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/artist" element={<Artist />} />
-          {/*  AUTH */}
+
+          {/* 🔐 AUTH */}
           <Route path="/login" element={<Login />} />
 
-          {/*  ADMIN */}
+          {/* 🧭 ADMIN DASHBOARD */}
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* 🔥 ADMIN CRUD */}
           <Route
             path="/admin"
             element={
