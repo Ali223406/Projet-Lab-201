@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { db } from "../service/firebase/firebase-config";
 import { collection, getDocs } from "firebase/firestore";
+import "./tour.css";
 
 export default function Tour() {
   const [concerts, setConcerts] = useState([]);
@@ -28,57 +29,39 @@ export default function Tour() {
   }, []);
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        backgroundImage: "url('/images/lana1.jpeg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        color: "#fff",
-        textAlign: "center",
-        padding: "60px",
-        fontFamily: "serif",
-        position: "relative",
-      }}
-    >
-      {/* overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "rgba(0, 0, 0, 0.47)",
-        }}
-      />
+  <div className="tour-page">
 
-      {/* content */}
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h1 style={{ color: "#C8A27A" }}>STOVE - Tour Dates</h1>
+    <div className="tour-bg" />
+    <div className="tour-overlay" />
 
-        <p>Upcoming shows</p>
+    <div className="tour-container">
 
-        {loading ? (
-          <p>Loading...</p>
-        ) : concerts.length === 0 ? (
-          <p>No concerts available</p>
-        ) : (
-          <ul style={{ listStyle: "none", padding: 0, fontSize: "18px" }}>
-            {concerts.map((concert) => (
-              <li
-                key={concert.id}
-                style={{
-                  marginBottom: "12px",
-                  padding: "10px",
-                  background: "rgba(255,255,255,0.08)",
-                  borderRadius: "10px",
-                }}
-              >
-                {concert.ville} - {concert.date}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+      <h1 className="tour-title">STOVE - Tour Dates</h1>
+
+      <p className="tour-subtitle">Upcoming shows</p>
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : concerts.length === 0 ? (
+        <p>No concerts available</p>
+      ) : (
+        <div className="tour-list">
+          {concerts.map((concert) => (
+            <div key={concert.id} className="tour-card">
+
+              <div>
+                <div className="tour-city">{concert.ville}</div>
+                <div className="tour-country">{concert.pays}</div>
+              </div>
+
+              <div className="tour-date">{concert.date}</div>
+
+            </div>
+          ))}
+        </div>
+      )}
+
     </div>
-  );
+  </div>
+);
 }
