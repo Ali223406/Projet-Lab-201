@@ -4,19 +4,24 @@ import Album from "./Album";
 import Tour from "./Tour";
 import Blog from "./Blog";
 import Artist from "./Artist";
+import Cle from "./cle";
 
 export default function Home() {
   return (
     <div className="home">
 
-      {/* HERO */}
       <section className="section hero">
-        <div className="overlay" />
-        <h1>STOVE</h1>
+  <div className="overlay" />
 
+ 
 
-        
-      </section>
+  <nav className="hero-nav">
+    <a href="#home">Home</a>
+    <a href="#album">Music</a>
+   
+    <a href="#blog">Shop</a>
+  </nav>
+</section>
 
       {/* ALBUM PAGE */}
       <section id="album">
@@ -27,7 +32,11 @@ export default function Home() {
         <Artist />
       </section>
 
-      {/* TOUR PAGE */}
+        {/* CLE PAGE */}
+      <section id="cle">
+        <Cle />
+      </section>
+        {/* TOUR PAGE */}
       <section id="tour">
         <Tour />
       </section>

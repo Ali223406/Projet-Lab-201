@@ -36,41 +36,62 @@ section {
   box-sizing: border-box;
 }
 
-/* HERO */
 .hero {
   height: 100vh;
-  width: 100%;
-
   background-image: url("/images/homelana.jpeg");
   background-size: cover;
   background-position: center;
+
   position: relative;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+    justify-content: flex-start; /* ⭐ IMPORTANT */
+  padding-top: 250px;          /* ajuste la hauteur */
+}
+.hero-title {
+  font-size: 70px;
+  letter-spacing: 8px;
+  color: #612020;
+  font-family: serif;
+  margin-bottom: 10px;
 }
 
-/* overlay */
-.overlay {
+/* NAVBAR */
+.hero-nav {
+  display: flex;
+  gap: 30px;
+
+  margin-top: 10px;
+}
+
+.hero-nav a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.8);
+  font-size: 14px;
+  letter-spacing: 3px;
+
+  transition: 0.3s;
+  position: relative;
+}
+
+/* hover effet luxe */
+.hero-nav a::after {
+  content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: #c8a27a;
+  transition: 0.3s;
 }
 
-/* TITRE HERO */
-.site-title {
-  position: absolute;
-  top: 30px;
-  left: 50px;
-
-  font-size: 28px;
-  letter-spacing: 4px;
-  color: #5e2605c7;
+.hero-nav a:hover {
+  color: #c8a27a;
 }
 
-/* HERO CONTENT */
-.hero-content {
-  text-align: center;
-  z-index: 2;
+.hero-nav a:hover::after {
+  width: 100%;
 }

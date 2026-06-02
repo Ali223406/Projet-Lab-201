@@ -1,0 +1,35 @@
+.cle-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Georgia, serif;
+  color: white;
+
+  background-image: url("/images/cle.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* overlay pour lisibilité */
+.cle-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* titre */
+.cle-title {
+  position: relative;
+  z-index: 2;
+
+  font-size: 64px;
+  letter-spacing: 6px;
+  color: #c8a27a;
+}

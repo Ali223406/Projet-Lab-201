@@ -18,7 +18,7 @@
   position: absolute;
   inset: 0;
 
-  background-image: url("/images/lana1.jpeg");
+  background-color: #412e1a;
   background-size: cover;
   background-position: center;
 
@@ -45,12 +45,12 @@
 
 /* TITLE (comme album-title) */
 .tour-title {
-  text-align: center;
+  text-align: left;
   font-size: 64px;
   letter-spacing: 6px;
-  color: #5e2605c7;
+  color: #e9e0dbc7;
 
-  margin-bottom: 60px;
+  margin-bottom: 150px;
 }
 
 /* GRID (comme album-grid) */
@@ -81,8 +81,9 @@
 
 /* RIGHT LIST */
 .tour-right {
-  flex: 1;
-  min-width: 350px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* CARD (style clean album info list) */
@@ -91,30 +92,42 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 14px 18px;
-  margin-bottom: 12px;
+  padding: 55px;
+  margin-bottom: 14px;
+
+  background-image: url("/images/papier.png");
+  background-size: cover;
+  background-position: center;
 
   border-radius: 12px;
 
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(10px);
+  color: #fff;
 
-  border-left: 4px solid #c8a27a;
+  position: relative;
+}
+.tour-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* BUTTON */
+.tour-button {
+  padding: 8px 14px;
+
+  border: 1px solid #c8a27a;
+  background: rgba(0,0,0,0.25);
+
+  color: #c8a27a;
+  font-size: 11px;
+  letter-spacing: 2px;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  border-radius: 6px;
 }
 
-/* CITY */
-.tour-city {
-  font-weight: 600;
-  font-size: 16px;
-}
-
-/* COUNTRY */
-.tour-country {
-  font-size: 13px;
-  opacity: 0.7;
-}
-
-/* DATE */
-.tour-date {
-  opacity: 0.85;
+.tour-button:hover {
+  background: #c8a27a;
+  color: black;
 }

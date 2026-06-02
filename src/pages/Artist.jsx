@@ -21,6 +21,12 @@ export default function Artist() {
           <img src="/images/lanahead.jpeg" alt="Artist" />
         </div>
 
+          <img
+        src="/images/discc.png"
+        alt="detail"
+        className="artist-bottom-image"
+      />
+
         {/* RIGHT TEXT */}
         <div className="artist-text">
 
@@ -39,6 +45,8 @@ export default function Artist() {
             <div className="artist-card">Genre: Alternative Pop</div>
             <div className="artist-card">Style: Cinematic</div>
           </div>
+          
+
 
         </div>
       </div>

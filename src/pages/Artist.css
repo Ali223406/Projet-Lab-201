@@ -55,9 +55,9 @@
 /* IMAGE */
 .artist-image img {
   width: 320px;
-  border-radius: 16px;
+  height: auto;
 
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
 
   transition: transform 0.4s ease;
 }
@@ -116,4 +116,22 @@
 
   color: #c8a27a;
   font-size: 14px;
+}
+.artist-bottom-image {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
+  width: 140px;
+  height: auto;
+
+  opacity: 0.85;
+
+  z-index: 2;
+
+  transition: transform 0.3s ease;
+}
+
+.artist-bottom-image:hover {
+  transform: rotate(8deg) scale(1.05);
 }

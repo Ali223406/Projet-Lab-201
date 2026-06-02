@@ -36,9 +36,9 @@ export default function Tour() {
 
     <div className="tour-container">
 
-      <h1 className="tour-title">STOVE - Tour Dates</h1>
+      <h1 className="tour-title">concerts</h1>
 
-      <p className="tour-subtitle">Upcoming shows</p>
+     
 
       {loading ? (
         <p>Loading...</p>
@@ -48,14 +48,20 @@ export default function Tour() {
         <div className="tour-list">
           {concerts.map((concert) => (
             <div key={concert.id} className="tour-card">
-
+                {/* LEFT */}
               <div>
                 <div className="tour-city">{concert.ville}</div>
                 <div className="tour-country">{concert.pays}</div>
               </div>
+        {/* RIGHT GROUP */}
+          <div className="tour-right">
+                    <div className="tour-date">{concert.date}</div>
 
-              <div className="tour-date">{concert.date}</div>
-
+                      
+            <button className="tour-button">
+              BUY TICKET
+            </button>
+            </div>
             </div>
           ))}
         </div>
