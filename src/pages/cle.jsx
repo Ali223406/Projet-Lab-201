@@ -4,7 +4,7 @@ export default function Cle() {
     <div className="cle-page">
       <div className="cle-overlay" />
 
-      <h1 className="cle-title">CLE</h1>
+    
     </div>
   );
 }

@@ -91,7 +91,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  flex-direction: column; 
   padding: 55px;
   margin-bottom: 14px;
 
@@ -112,19 +112,18 @@
 }
 /* BUTTON */
 .tour-button {
-  padding: 8px 14px;
+   padding: 14px;
 
-  border: 1px solid #c8a27a;
-  background: rgba(0,0,0,0.25);
+  border: none;
+ 
 
-  color: #c8a27a;
-  font-size: 11px;
-  letter-spacing: 2px;
+  background: #4b1702;
+
+  color: black;
+  font-weight: bold;
 
   cursor: pointer;
-  transition: 0.3s;
-
-  border-radius: 6px;
+  
 }
 
 .tour-button:hover {

@@ -5,7 +5,7 @@ import Tour from "./Tour";
 import Blog from "./Blog";
 import Artist from "./Artist";
 import Cle from "./cle";
-
+import Subscribe from "./Subscribe";
 export default function Home() {
   return (
     <div className="home">
@@ -35,6 +35,10 @@ export default function Home() {
         {/* CLE PAGE */}
       <section id="cle">
         <Cle />
+      </section>
+      {/* SUBSCRIBE PAGE */}
+      <section id="subscribe">
+        <Subscribe />
       </section>
         {/* TOUR PAGE */}
       <section id="tour">
