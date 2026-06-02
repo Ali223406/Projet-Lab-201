@@ -4,10 +4,12 @@ import "./Artist.css";
 export default function Artist() {
   return (
     <div className="artist-page">
-
+     
       {/* BACKGROUND IMAGE LAYER */}
       <div className="artist-bg" />
-
+       {/* TITLE */}
+      <h1 className="artist-title">Lana Del Rey</h1>
+      
       {/* OVERLAY */}
       <div className="artist-overlay" />
 

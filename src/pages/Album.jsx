@@ -1,3 +1,4 @@
+import "./Album.css";
 export default function Album() {
   return (
     <div className="album-page">
@@ -42,7 +43,9 @@ export default function Album() {
             <div className="album-mini">
               <img src="/images/levre.jpeg" alt="detail" />
             </div>
-
+              <div className="album-mini album-car">
+            <img src="/images/car.jpeg" alt="car detail" />
+          </div>
           </div>
 
         </div>

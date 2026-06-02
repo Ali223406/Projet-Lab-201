@@ -83,6 +83,20 @@
   line-height: 1.8;
   opacity: 0.9;
 }
+.artist-title {
+  position: absolute;
+  top: 100px;
+  left: 66%;
+  transform: translateX(-50%);
+
+  font-family: 'Pacifico', cursive; /* 💥 handwriting style */
+  font-size: 48px;
+  color: #5e2605c7;
+  letter-spacing: 2px;
+
+  z-index: 3;
+  opacity: 0.95;
+}
 
 /* CARDS */
 .artist-cards {

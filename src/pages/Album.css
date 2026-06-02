@@ -3,13 +3,11 @@
   width: 100%;
   position: relative;
 
-  font-family: Georgia, serif;
-  color: white;
-
   display: flex;
   align-items: center;
-  justify-content: center;
 
+  font-family: Georgia, serif;
+  color: white;
   overflow: hidden;
 }
 
@@ -25,50 +23,61 @@
   transform: scale(1.05);
 }
 
-/* overlay cinematic */
+/* OVERLAY (identique Artist style) */
 .album-overlay {
   position: absolute;
   inset: 0;
 
-  background: rgba(0,0,0,0.35);
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.35)
+  );
 }
 
-/* container */
+/* CONTAINER */
 .album-container {
   position: relative;
   z-index: 2;
 
   width: 100%;
   max-width: 1200px;
+  margin: 0 auto;
+
   padding: 0 8%;
 }
 
-/* title */
+/* TITLE */
 .album-title {
-  text-align: center;
-  font-size: 64px;
+  font-size: 48px;
   letter-spacing: 6px;
-  color: #c8a27a;
+  color: #5e2605c7;
 
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
-/* grid */
+/* GRID (IMPORTANT: vrai layout aligné) */
 .album-grid {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 80px;
+  gap: 60px;
 
   flex-wrap: wrap;
 }
 
-/* cover */
-.album-cover img {
-  width: 420px;
-  border-radius: 16px;
+/* LEFT IMAGE */
+.album-cover {
+  flex: 1;
+  min-width: 300px;
+}
 
-  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+.album-cover img {
+  width: 600px;   /* IMPORTANT: pas énorme */
+  max-width: 100%;
+
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
 
   transition: transform 0.4s ease;
 }
@@ -77,28 +86,29 @@
   transform: scale(1.03);
 }
 
-/* info */
+/* RIGHT CONTENT */
 .album-info {
   flex: 1;
-  min-width: 350px;
+  min-width: 320px;
 }
 
 .album-info h2 {
   color: #c8a27a;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .album-info p {
   line-height: 1.8;
   opacity: 0.9;
+  font-size: 16px;
 }
 
+/* TRACKLIST */
 .album-info h3 {
-  margin-top: 30px;
+  margin-top: 25px;
   color: #c8a27a;
 }
 
-/* tracklist */
 .album-info ul {
   list-style: none;
   padding: 0;
@@ -108,11 +118,28 @@
   opacity: 0.9;
 }
 
-/* mini image */
+
+/* MINI IMAGE (commune style) */
 .album-mini img {
   width: 160px;
   margin-top: 20px;
-
   border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* hover cinematic */
+.album-mini img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* STYLE SPÉCIAL VOITURE */
+.album-car img {
+  width: 220px;          /* un peu plus grande */
+  border-radius: 14px;   /* plus smooth */
+  box-shadow: 0 20px 50px rgba(0,0,0,0.55);
+  margin-top: 30px;
+  display: block;
 }

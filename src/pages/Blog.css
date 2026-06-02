@@ -41,7 +41,7 @@
 .blog-title {
   font-size: 48px;
   letter-spacing: 4px;
-  color: #c8a27a;
+  color: #5e2605c7;
   margin-bottom: 10px;
 }
 
@@ -50,6 +50,7 @@
   opacity: 0.75;
   margin-bottom: 40px;
   font-style: italic;
+  
 }
 
 /* list */
