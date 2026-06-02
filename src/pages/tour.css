@@ -1,0 +1,120 @@
+.tour-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  font-family: Georgia, serif;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.tour-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/lana1.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.05);
+}
+
+/* OVERLAY (comme album) */
+.tour-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.35);
+}
+
+/* CONTAINER */
+.tour-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 8%;
+}
+
+/* TITLE (comme album-title) */
+.tour-title {
+  text-align: center;
+  font-size: 64px;
+  letter-spacing: 6px;
+  color: #c8a27a;
+
+  margin-bottom: 60px;
+}
+
+/* GRID (comme album-grid) */
+.tour-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  flex-wrap: wrap;
+}
+
+/* LEFT TEXT (comme album-info) */
+.tour-left {
+  flex: 1;
+  min-width: 350px;
+}
+
+.tour-subtitle {
+  color: #c8a27a;
+  margin-bottom: 20px;
+}
+
+.tour-desc {
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* RIGHT LIST */
+.tour-right {
+  flex: 1;
+  min-width: 350px;
+}
+
+/* CARD (style clean album info list) */
+.tour-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 18px;
+  margin-bottom: 12px;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+
+  border-left: 4px solid #c8a27a;
+}
+
+/* CITY */
+.tour-city {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* COUNTRY */
+.tour-country {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* DATE */
+.tour-date {
+  opacity: 0.85;
+}

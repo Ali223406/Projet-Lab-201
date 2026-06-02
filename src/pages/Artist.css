@@ -1,0 +1,105 @@
+.artist-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  font-family: Georgia, serif;
+  color: white;
+  overflow: hidden;
+}
+
+/* background image */
+.artist-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/lana1.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.05);
+}
+
+/* overlay cinematic */
+.artist-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.75),
+    rgba(0,0,0,0.35)
+  );
+}
+
+/* container */
+.artist-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8%;
+  gap: 60px;
+}
+
+/* IMAGE */
+.artist-image img {
+  width: 320px;
+  border-radius: 16px;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+  transition: transform 0.4s ease;
+}
+
+.artist-image img:hover {
+  transform: scale(1.03);
+}
+
+/* TEXT */
+.artist-text {
+  max-width: 600px;
+}
+
+.artist-subtitle {
+  font-style: italic;
+  opacity: 0.85;
+  color: #c8a27a;
+  margin-bottom: 20px;
+}
+
+.artist-description {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* CARDS */
+.artist-cards {
+  margin-top: 30px;
+
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.artist-card {
+  background: rgba(255,255,255,0.08);
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  backdrop-filter: blur(10px);
+
+  color: #c8a27a;
+  font-size: 14px;
+}

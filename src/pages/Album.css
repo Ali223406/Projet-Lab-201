@@ -1,0 +1,118 @@
+.album-page {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+
+  font-family: Georgia, serif;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* BACKGROUND */
+.album-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url("/images/lana1.jpeg");
+  background-size: cover;
+  background-position: center;
+
+  transform: scale(1.05);
+}
+
+/* overlay cinematic */
+.album-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0,0,0,0.35);
+}
+
+/* container */
+.album-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 8%;
+}
+
+/* title */
+.album-title {
+  text-align: center;
+  font-size: 64px;
+  letter-spacing: 6px;
+  color: #c8a27a;
+
+  margin-bottom: 60px;
+}
+
+/* grid */
+.album-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+
+  flex-wrap: wrap;
+}
+
+/* cover */
+.album-cover img {
+  width: 420px;
+  border-radius: 16px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+
+  transition: transform 0.4s ease;
+}
+
+.album-cover img:hover {
+  transform: scale(1.03);
+}
+
+/* info */
+.album-info {
+  flex: 1;
+  min-width: 350px;
+}
+
+.album-info h2 {
+  color: #c8a27a;
+  margin-bottom: 20px;
+}
+
+.album-info p {
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+.album-info h3 {
+  margin-top: 30px;
+  color: #c8a27a;
+}
+
+/* tracklist */
+.album-info ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+
+  line-height: 2;
+  opacity: 0.9;
+}
+
+/* mini image */
+.album-mini img {
+  width: 160px;
+  margin-top: 20px;
+
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}

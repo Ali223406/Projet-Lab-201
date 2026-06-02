@@ -1,48 +1,41 @@
-import { useNavigate } from "react-router-dom";
 import "./Home.css";
 
-export default function Home() {
-  const navigate = useNavigate();
+import Album from "./Album";
+import Tour from "./Tour";
+import Blog from "./Blog";
+import Artist from "./Artist";
 
+export default function Home() {
   return (
     <div className="home">
 
       {/* HERO */}
-      <div className="hero">
+      <section className="section hero">
         <div className="overlay" />
+        <h1>STOVE</h1>
 
-        <div className="hero-content">
-         
-                    <h2 className="album">STOVE</h2>
 
-          <p className="subtitle">
-            “A story of home, love and memory.”
-          </p>
+        
+      </section>
 
-          <div className="cta">
-            <button onClick={() => navigate("/album")}>
-              Discover Album
-            </button>
+      {/* ALBUM PAGE */}
+      <section id="album">
+        <Album />
+      </section>
+        {/* Artist PAGE */}
+      <section id="artist">
+        <Artist />
+      </section>
 
-            <button onClick={() => navigate("/tour")}>
-              Tour Dates
-            </button>
+      {/* TOUR PAGE */}
+      <section id="tour">
+        <Tour />
+      </section>
 
-            <button onClick={() => navigate("/blog")}>
-              News
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* MINI SECTION */}
-      <div className="info-section">
-        <h3>New Album - 2026</h3>
-        <p>
-          Stove is a cinematic americana project inspired by
-          countryside, memory and intimate storytelling.
-        </p>
-      </div>
+      {/* BLOG / NEWS */}
+      <section id="blog">
+        <Blog />
+      </section>
 
     </div>
   );
