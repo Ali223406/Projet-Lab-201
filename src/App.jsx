@@ -5,10 +5,12 @@ import Album from "./pages/Album";
 import Tour from "./pages/Tour";
 import Blog from "./pages/Blog";
 import Artist from "./pages/Artist";
+import Article from "./pages/Article";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Admin from "./pages/Admin";
+import "./App.css";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./context/AuthContext";
@@ -25,7 +27,7 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/artist" element={<Artist />} />
-
+          <Route path="/article" element={<Article />} />
           {/* 🔐 AUTH */}
           <Route path="/login" element={<Login />} />
 

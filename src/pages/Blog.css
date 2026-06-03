@@ -20,7 +20,7 @@
 .blog-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.096);
+  background: rgba(0, 0, 0, 0);
 }
 
 /* container comme Album */

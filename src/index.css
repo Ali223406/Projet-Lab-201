@@ -52,6 +52,8 @@
 
 body {
   margin: 0;
+  font-family: "Inknut Antiqua", serif;
+   overflow-y: auto;
 }
 
 #root {

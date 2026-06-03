@@ -1,36 +1,24 @@
-import "./Blog.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import "./blog.css";
 
 export default function Blog() {
   return (
     <div className="blog-page">
-      <div className="blog-overlay" />
+      <h1>STOVE — Blog</h1>
 
-      <div className="blog-container">
-        <h1 className="blog-title">STOVE - News</h1>
+      <div className="blog-list">
 
-        <p className="blog-subtitle">
-          Latest updates about Lana Del Rey
-        </p>
+        <Link to="/article" className="blog-card">
+          <h2>ARTICLE 01</h2>
+          <p>Bienvenue à la maison : entrez dans l'univers de « Stove »</p>
+        </Link>
 
-        <div className="blog-list">
+        <Link to="/article" className="blog-card">
+          <h2>ARTICLE 02</h2>
+          <p>Les trois portes de « Stove » : décryptage des singles</p>
+        </Link>
 
-          <article className="blog-card">
-            <h3>New single released</h3>
-            <p>
-              “Henry, Come On” opens a new chapter in the STOVE universe,
-              blending nostalgia and cinematic emotion.
-            </p>
-          </article>
-
-          <article className="blog-card">
-            <h3>Album production</h3>
-            <p>
-              The STOVE project explores memory, home and dreamlike storytelling
-              with vintage sound design.
-            </p>
-          </article>
-
-        </div>
       </div>
     </div>
   );
