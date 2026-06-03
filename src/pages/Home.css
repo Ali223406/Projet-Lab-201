@@ -62,13 +62,14 @@ section {
 .hero-nav {
   display: flex;
   gap: 30px;
-
+  color: rgba(97, 32, 32, 1);;
   margin-top: 10px;
+  
 }
 
 .hero-nav a {
   text-decoration: none;
-  color: rgba(255,255,255,0.8);
+  color: rgba(97, 32, 32, 1);
   font-size: 14px;
   letter-spacing: 3px;
 
