@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap');
+
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+   font-family: "Inknut Antiqua", serif;
   background: linear-gradient(180deg, #0b0b0f, #1a1a24);
 }
 
@@ -25,7 +27,9 @@ body {
 .login-title {
   font-size: 36px;
   font-weight: 300;
-  color: rgba(109, 3, 3, 0.712);
+   color: rgba(97, 32, 32, 1);
+  font-family: "IM FELL DW Pica", serif !important;
+
   letter-spacing: 2px;
 }
 
@@ -40,7 +44,7 @@ body {
   max-width: 420px;
   padding: 30px;
 
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0);
   backdrop-filter: blur(12px);
 
   border-radius: 18px;
@@ -58,8 +62,8 @@ body {
   border: none;
   border-radius: 12px;
 
-  background: rgba(255, 255, 255, 0.08);
-  color: rgba(109, 3, 3, 0.712);
+  background: rgba(255, 255, 255, 0.021);
+  color: rgba(97, 32, 32, 1);
 
   outline: none;
   font-size: 14px;

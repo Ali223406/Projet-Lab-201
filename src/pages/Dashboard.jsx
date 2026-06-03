@@ -9,10 +9,20 @@ import {
   deleteDoc,
   addDoc,
 } from "firebase/firestore";
+import { signOut } from "firebase/auth";
+import { auth } from "../service/firebase/firebase-config";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
+  const handleLogout = async () => {
+  try {
+    await signOut(auth);
+    navigate("/");
+  } catch (error) {
+    console.error("Logout error:", error);
+  }
+};
 
   const emptyForm = {
     ville: "",
@@ -84,6 +94,9 @@ export default function Dashboard() {
       <div className="content">
         <h1>Lana Del Rey</h1>
         <p>Admin — Tour & Release Management</p>
+        <button className="logout-btn" onClick={handleLogout}>
+        Déconnexion
+      </button>
 
         <div className="panel">
           <h2>Tour Dates</h2>
