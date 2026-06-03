@@ -6,16 +6,28 @@ import {
   getDocs,
   updateDoc,
   doc,
-  deleteDoc
+  deleteDoc,
+  addDoc,
 } from "firebase/firestore";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   const navigate = useNavigate();
 
+  const emptyForm = {
+    ville: "",
+    date: "",
+    lieu: "",
+    pays: "",
+    soldOut: false,
+  };
+
+  const [formData, setFormData] = useState(emptyForm);
+  const [editingId, setEditingId] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [concerts, setConcerts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [editingConcert, setEditingConcert] = useState(null);
 
   const fetchConcerts = async () => {
     try {
@@ -38,30 +50,27 @@ export default function Dashboard() {
     fetchConcerts();
   }, []);
 
-  const handleUpdateConcert = async () => {
-    if (!editingConcert) return;
-
+  const handleDeleteConcert = async (id) => {
     try {
-      const ref = doc(db, "concerts", editingConcert.id);
-
-      await updateDoc(ref, {
-        ville: editingConcert.ville,
-        date: editingConcert.date,
-        lieu: editingConcert.lieu,
-        pays: editingConcert.pays,
-        soldOut: editingConcert.soldOut,
-      });
-
-      setEditingConcert(null);
+      await deleteDoc(doc(db, "concerts", id));
       fetchConcerts();
     } catch (error) {
       console.error(error);
     }
   };
 
-  const handleDeleteConcert = async (id) => {
+  const handleSave = async () => {
     try {
-      await deleteDoc(doc(db, "concerts", id));
+      if (editingId) {
+        const ref = doc(db, "concerts", editingId);
+        await updateDoc(ref, formData);
+      } else {
+        await addDoc(collection(db, "concerts"), formData);
+      }
+
+      setFormData(emptyForm);
+      setEditingId(null);
+      setIsModalOpen(false);
       fetchConcerts();
     } catch (error) {
       console.error(error);
@@ -79,7 +88,13 @@ export default function Dashboard() {
         <div className="panel">
           <h2>Tour Dates</h2>
 
-          <button onClick={() => navigate("/admin")}>
+          <button
+            onClick={() => {
+              setEditingId(null);
+              setFormData(emptyForm);
+              setIsModalOpen(true);
+            }}
+          >
             Ajouter une date
           </button>
 
@@ -89,11 +104,8 @@ export default function Dashboard() {
             <p>Aucune date enregistrée.</p>
           ) : (
             <div className="concert-list">
-
               {concerts.map((concert) => (
                 <div className="ticket-card" key={concert.id}>
-
-                  {/* LEFT */}
                   <div className="ticket-city">
                     <h3>{concert.ville}</h3>
                     <span>{concert.pays}</span>
@@ -101,7 +113,6 @@ export default function Dashboard() {
 
                   <div className="ticket-divider"></div>
 
-                  {/* MIDDLE */}
                   <div className="ticket-info">
                     <p>📅 {concert.date}</p>
                     <p>📍 {concert.lieu}</p>
@@ -109,7 +120,6 @@ export default function Dashboard() {
 
                   <div className="ticket-divider"></div>
 
-                  {/* STATUS */}
                   <div className="ticket-status">
                     <span
                       className={
@@ -122,12 +132,20 @@ export default function Dashboard() {
                     </span>
                   </div>
 
-                  {/* ACTIONS ALIGNÉES */}
                   <div className="ticket-actions">
-
                     <button
                       className="edit-btn"
-                      onClick={() => setEditingConcert(concert)}
+                      onClick={() => {
+                        setEditingId(concert.id);
+                        setFormData({
+                          ville: concert.ville,
+                          date: concert.date,
+                          lieu: concert.lieu,
+                          pays: concert.pays,
+                          soldOut: concert.soldOut,
+                        });
+                        setIsModalOpen(true);
+                      }}
                     >
                       Edit
                     </button>
@@ -142,83 +160,91 @@ export default function Dashboard() {
                     >
                       Delete
                     </button>
-
                   </div>
-
                 </div>
               ))}
-
             </div>
           )}
         </div>
       </div>
 
-      {/* MODAL EDIT */}
-      {editingConcert && (
-        <div className="edit-modal">
-          <h3>Edit Ticket</h3>
+      {/* MODAL CREATE + EDIT */}
+     {isModalOpen && (
+  <div className="album-modal-overlay">
+    <div className="album-modal">
+      <h1 className="album-title">
+        {editingId ? "Edit Concert" : "Add Concert"}
+      </h1>
 
+      <div className="album-form">
+        <input
+          type="text"
+          placeholder="Ville"
+          value={formData.ville}
+          onChange={(e) =>
+            setFormData({ ...formData, ville: e.target.value })
+          }
+        />
+
+        <input
+          type="date"
+          value={formData.date}
+          onChange={(e) =>
+            setFormData({ ...formData, date: e.target.value })
+          }
+        />
+
+        <input
+          type="text"
+          placeholder="Lieu "
+          value={formData.lieu}
+          onChange={(e) =>
+            setFormData({ ...formData, lieu: e.target.value })
+          }
+        />
+
+        <input
+          type="text"
+          placeholder="Pays"
+          value={formData.pays}
+          onChange={(e) =>
+            setFormData({ ...formData, pays: e.target.value })
+          }
+        />
+
+        <label className="album-checkbox">
           <input
-            value={editingConcert.ville}
+            type="checkbox"
+            checked={formData.soldOut}
             onChange={(e) =>
-              setEditingConcert({
-                ...editingConcert,
-                ville: e.target.value,
+              setFormData({
+                ...formData,
+                soldOut: e.target.checked,
               })
             }
           />
+          Sold Out
+        </label>
 
-          <input
-            type="date"
-            value={editingConcert.date}
-            onChange={(e) =>
-              setEditingConcert({
-                ...editingConcert,
-                date: e.target.value,
-              })
-            }
-          />
+        <div className="album-buttons">
+          <button onClick={handleSave}>
+            {editingId ? "Update" : "Create"}
+          </button>
 
-          <input
-            value={editingConcert.lieu}
-            onChange={(e) =>
-              setEditingConcert({
-                ...editingConcert,
-                lieu: e.target.value,
-              })
-            }
-          />
-
-          <input
-            value={editingConcert.pays}
-            onChange={(e) =>
-              setEditingConcert({
-                ...editingConcert,
-                pays: e.target.value,
-              })
-            }
-          />
-
-          <label>
-            <input
-              type="checkbox"
-              checked={editingConcert.soldOut}
-              onChange={(e) =>
-                setEditingConcert({
-                  ...editingConcert,
-                  soldOut: e.target.checked,
-                })
-              }
-            />
-            Sold Out
-          </label>
-
-          <button onClick={handleUpdateConcert}>Save</button>
-          <button onClick={() => setEditingConcert(null)}>
+          <button
+            onClick={() => {
+              setFormData(emptyForm);
+              setEditingId(null);
+              setIsModalOpen(false);
+            }}
+          >
             Cancel
           </button>
         </div>
-      )}
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
