@@ -5,7 +5,8 @@ import Album from "./pages/Album";
 import Tour from "./pages/Tour";
 import Blog from "./pages/Blog";
 import Artist from "./pages/Artist";
-import Article from "./pages/Article";
+import Article1 from "./pages/Article1";
+import Article2 from "./pages/Article2";
 
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
@@ -27,7 +28,8 @@ function App() {
           <Route path="/tour" element={<Tour />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/artist" element={<Artist />} />
-          <Route path="/article" element={<Article />} />
+          <Route path="/article-1" element={<Article1 />} />
+          <Route path="/article-2" element={<Article2 />} />
           {/* 🔐 AUTH */}
           <Route path="/login" element={<Login />} />
 

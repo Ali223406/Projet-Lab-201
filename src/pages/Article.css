@@ -15,27 +15,30 @@
 }
 .article-page h1 {
   font-size: 50px;
-  color: #5e2605c7;
+  color:  rgba(97, 32, 32, 1);
+  font-family: "IM FELL DW Pica", serif !important;
 }
 
 .article-page h2 {
   font-size: 28px;
   margin-top: 20px;
+  color: rgba(215, 161, 108, 1);
 }
 
 .article-page h3 {
   margin-top: 40px;
-  color: #5e2605c7;
+  color: rgba(215, 161, 108, 1);
 }
 
 .article-page h4 {
   margin-top: 25px;
-  color: #5e2605c7;
+  color: rgba(215, 161, 108, 1);
 }
 
 .article-page p {
   margin-top: 10px;
   opacity: 0.9;
+   color: rgba(97, 32, 32, 1);
 }
 
 hr {

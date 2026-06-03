@@ -1,91 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap');
+
 .blog-page {
   min-height: 100vh;
   width: 100%;
-
   position: relative;
 
   background-image: url("/images/lana1.jpeg");
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 120px 0;
+}
+.blog-page h1 {
+  font-size: 60px;
+  letter-spacing: 6px;
 
-  padding: 80px 0;
-  box-sizing: border-box;
+  color: rgba(97, 32, 32, 1);
+
+  font-family: "IM FELL DW Pica", serif !important;
+
+  margin-bottom: 30px;
 }
 
-/* overlay doux */
 .blog-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0,0,0,0.35);
 }
 
-/* container comme Album */
 .blog-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 
-  width: 100%;
-  max-width: 1400px;
-
-  padding: 0 10%;
-  box-sizing: border-box;
-
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8%;
 }
 
-/* title */
 .blog-title {
-  font-size: 48px;
-  letter-spacing: 4px;
-  color: #5e2605c7;
+  text-align: center;
+
+  font-size: 60px;
+  letter-spacing: 6px;
+
+  color: rgba(97, 32, 32, 1);
+
+  font-family: "IM FELL DW Pica", serif !important;
+
   margin-bottom: 10px;
 }
 
-/* subtitle */
 .blog-subtitle {
-  opacity: 0.75;
-  margin-bottom: 40px;
+  text-align: center;
+
+  color: rgba(215, 161, 108, 1);
+
   font-style: italic;
-  
+  margin-bottom: 80px;
+
+  font-size: 18px;
 }
 
-/* list */
 .blog-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 30px;
 }
 
-/* card */
 .blog-card {
-  text-align: left;
+  position: relative;
 
-  padding: 20px 24px;
-  border-radius: 14px;
+  padding: 35px;
 
-  background: rgba(255, 255, 255, 0.07);
-  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
 
-  border-left: 4px solid #c8a27a;
+  border: 1px solid rgba(215,161,108,0.25);
+  border-left: 6px solid #c8a27a;
 
-  transition: 0.25s ease;
+  transition: all 0.35s ease;
+  cursor: pointer;
+
+  overflow: hidden;
+}
+
+.blog-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255,255,255,0.25);
 }
 
 .blog-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-8px);
+
+  background: rgba(255,255,255,0.12);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.35),
+    0 0 25px rgba(215,161,108,0.12);
+}
+
+.blog-card h2 {
+  font-size: 15px;
+
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: rgba(215,161,108,1);
+
+  margin-bottom: 15px;
 }
 
 .blog-card h3 {
-  color: #c8a27a;
-  margin-bottom: 8px;
+  font-size: 28px;
+
+  color: white;
+
+  margin-bottom: 15px;
+
+  font-family: "IM FELL DW Pica", serif;
 }
 
 .blog-card p {
-  opacity: 0.85;
-  line-height: 1.6;
+  color: #5e2605c7;
+
+  line-height: 1.9;
+  font-size: 15px;
+
+  max-width: 900px;
+}
+
+.blog-read {
+  margin-top: 25px;
+
+  display: inline-block;
+
+  color: rgba(215,161,108,1);
+
+  font-style: italic;
+
+  transition: 0.3s;
+}
+
+.blog-card:hover .blog-read {
+  transform: translateX(6px);
 }

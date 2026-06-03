@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./blog.css";
+import "./Blog.css";
 
 export default function Blog() {
   return (
@@ -9,12 +9,12 @@ export default function Blog() {
 
       <div className="blog-list">
 
-        <Link to="/article" className="blog-card">
+        <Link to="/article-1" className="blog-card">
           <h2>ARTICLE 01</h2>
           <p>Bienvenue à la maison : entrez dans l'univers de « Stove »</p>
         </Link>
 
-        <Link to="/article" className="blog-card">
+        <Link to="/article-2" className="blog-card">
           <h2>ARTICLE 02</h2>
           <p>Les trois portes de « Stove » : décryptage des singles</p>
         </Link>
