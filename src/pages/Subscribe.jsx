@@ -9,7 +9,7 @@ export default function Subscribe() {
 
       {/* TOP IMAGES */}
       <div className="subscribe-gallery">
-
+       <button className="arrow left">‹</button>
   <div className="polaroid">
         <img src="/images/lanaa1.jpeg" alt="Lanaa 1" />
         <span>2012</span>
@@ -22,9 +22,12 @@ export default function Subscribe() {
         <img src="/images/lanaa3.jpeg" alt="Lanaa 3" />
         <span>2017</span>
       </div>
+      
+      <button className="arrow right">›</button>
+      </div>
 
 
-</div>
+
       {/* CONTENT */}
   <div className="subscribe-dots">
   <span className="dot active"></span>
