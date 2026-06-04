@@ -1,8 +1,8 @@
-import "./Album.css";
-import { useState } from "react";
+import "./Album.css";  // Importing CSS for the Album component
+import { useState } from "react";  // Importing useState hook from React
 
-export default function Album() {
-  const [showMore, setShowMore] = useState(false);
+export default function Album() {  // Defining the Album component
+  const [showMore, setShowMore] = useState(false);  // State to toggle showing more tracks in the tracklist
 
   return (
     <div className="album-page">

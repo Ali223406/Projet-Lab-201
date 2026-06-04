@@ -1,17 +1,17 @@
-import "./Home.css";
+import "./Home.css";  // Importing CSS for the Home component
 
-import Album from "./Album";
-import Tour from "./Tour";
-import Blog from "./Blog";
-import Artist from "./Artist";
-import Cle from "./cle";
-import Subscribe from "./Subscribe";
-export default function Home() {
+import Album from "./Album";  // Importing the Album component
+import Tour from "./Tour";   // Importing the Tour component
+import Blog from "./Blog";   // Importing the Blog component
+import Artist from "./Artist";   // Importing the Artist component
+import Cle from "./cle";   // Importing the Cle component
+import Subscribe from "./Subscribe"; // Importing the Subscribe component
+export default function Home() {  // Defining the Home component
   return (
     <div className="home">
 
       <section className="section hero">
-  <div className="overlay" />
+  <div className="overlay" />  
 
  
 
@@ -19,7 +19,7 @@ export default function Home() {
     <a href="#home">Home</a>
     <a href="#album">Music</a>
    
-    <a href="#blog">Shop</a>
+    <a href="#blog">Blog</a>
   </nav>
 </section>
 
@@ -36,18 +36,18 @@ export default function Home() {
       <section id="cle">
         <Cle />
       </section>
-      {/* SUBSCRIBE PAGE */}
-      <section id="subscribe">
-        <Subscribe />
-      </section>
+      
         {/* TOUR PAGE */}
       <section id="tour">
         <Tour />
       </section>
-
       {/* BLOG / NEWS */}
       <section id="blog">
         <Blog />
+      </section>
+      {/* SUBSCRIBE PAGE */}
+      <section id="subscribe">
+        <Subscribe />
       </section>
 
     </div>

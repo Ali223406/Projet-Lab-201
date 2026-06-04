@@ -1,7 +1,7 @@
-import React from "react";
-import "./Artist.css";
+import React from "react";  // Importing React library
+import "./Artist.css"; // Importing CSS for the Artist component
 
-export default function Artist() {
+export default function Artist() {   // Defining the Artist component
   return (
     <div className="artist-page">
      

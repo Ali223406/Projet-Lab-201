@@ -37,13 +37,13 @@ function App() {
             <Route path="/artist" element={<Artist />} />
             <Route path="/article-1" element={<Article1 />} />
             <Route path="/article-2" element={<Article2 />} />
-            <Route path="/subscribe" element={<Subscribe />} />
+            
             <Route path="/cle" element={<Cle />} />
-
-            {/* 🔐 AUTH */}
+            <Route path="/subscribe" element={<Subscribe />} />
+            {/*  AUTH */}
             <Route path="/login" element={<Login />} />
 
-            {/* 🧭 ADMIN DASHBOARD */}
+            {/*  ADMIN DASHBOARD */}
             <Route
               path="/dashboard"
               element={
@@ -53,7 +53,7 @@ function App() {
               }
             />
 
-            {/* 🔥 ADMIN CRUD */}
+            {/*  ADMIN CRUD */}
             <Route
               path="/admin"
               element={
