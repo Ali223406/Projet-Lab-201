@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { db } from "../service/firebase/firebase-config";
-import {
+import React, { useEffect, useState } from "react";  // Importing React and necessary hooks
+import { useNavigate } from "react-router-dom";  // Importing useNavigate hook for navigation
+import { db } from "../service/firebase/firebase-config";  // Importing Firebase database configuration
+import {  // Importing Firestore functions for database operations
   collection,
   getDocs,
   updateDoc,
@@ -9,22 +9,22 @@ import {
   deleteDoc,
   addDoc,
 } from "firebase/firestore";
-import { signOut } from "firebase/auth";
-import { auth } from "../service/firebase/firebase-config";
+import { signOut } from "firebase/auth";  // Importing signOut function for logging out
+import { auth } from "../service/firebase/firebase-config";  // Importing Firebase authentication configuration
 import "./Dashboard.css";
 
-export default function Dashboard() {
-  const navigate = useNavigate();
-  const handleLogout = async () => {
+export default function Dashboard() { // Defining the Dashboard component
+  const navigate = useNavigate();  // Initializing the navigate function for programmatic navigation  
+  const handleLogout = async () => {   // Function to handle user logout
   try {
-    await signOut(auth);
+    await signOut(auth);  // Signing out the user using Firebase authentication
     navigate("/");
   } catch (error) {
-    console.error("Logout error:", error);
+    console.error("Logout error:", error);  // Logging any errors that occur during logout
   }
 };
 
-  const emptyForm = {
+  const emptyForm = {  // Defining an empty form object to reset the form state
     ville: "",
     date: "",
     lieu: "",
@@ -32,23 +32,23 @@ export default function Dashboard() {
     soldOut: false,
   };
 
-  const [formData, setFormData] = useState(emptyForm);
+  const [formData, setFormData] = useState(emptyForm);  // State to manage form data for adding/editing concerts
   const [editingId, setEditingId] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);  // State to manage the visibility of the modal for adding/editing concerts
 
-  const [concerts, setConcerts] = useState([]);
+  const [concerts, setConcerts] = useState([]);  // State to store the list of concerts fetched from the database
   const [loading, setLoading] = useState(true);
 
-  const fetchConcerts = async () => {
+  const fetchConcerts = async () => {  // Function to fetch concerts from the Firestore database
     try {
-      const snapshot = await getDocs(collection(db, "concerts"));
+      const snapshot = await getDocs(collection(db, "concerts"));  // Getting all documents from the "concerts" collection
 
-      const list = snapshot.docs.map((doc) => ({
+      const list = snapshot.docs.map((doc) => ({  // Mapping over the documents to create a list of concerts with their data and ID
         id: doc.id,
         ...doc.data(),
       }));
 
-      setConcerts(list);
+      setConcerts(list);  // Updating the state with the fetched concerts
     } catch (error) {
       console.error(error);
     } finally {
@@ -56,11 +56,11 @@ export default function Dashboard() {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {  // Using useEffect to fetch concerts when the component mounts
     fetchConcerts();
   }, []);
 
-  const handleDeleteConcert = async (id) => {
+  const handleDeleteConcert = async (id) => {   // Function to handle the deletion of a concert
     try {
       await deleteDoc(doc(db, "concerts", id));
       fetchConcerts();
@@ -69,7 +69,7 @@ export default function Dashboard() {
     }
   };
 
-  const handleSave = async () => {
+  const handleSave = async () => {  // Function to handle saving a new concert or updating an existing one
     try {
       if (editingId) {
         const ref = doc(db, "concerts", editingId);
@@ -78,16 +78,16 @@ export default function Dashboard() {
         await addDoc(collection(db, "concerts"), formData);
       }
 
-      setFormData(emptyForm);
-      setEditingId(null);
-      setIsModalOpen(false);
+      setFormData(emptyForm);  // Resetting the form data to empty after saving
+      setEditingId(null);  // Resetting the editing ID to null after saving
+      setIsModalOpen(false); // Closing the modal after saving
       fetchConcerts();
     } catch (error) {
-      console.error(error);
+      console.error(error);  // Logging any errors that occur during the save operation
     }
   };
 
-  return (
+  return (  // Returning the JSX for the Dashboard component
     <div className="dashboard">
       <div className="overlay"></div>
 

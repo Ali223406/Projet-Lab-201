@@ -2,7 +2,7 @@ import React from "react";  // Importing React library
 import "./Artist.css"; // Importing CSS for the Artist component
 
 export default function Artist() {   // Defining the Artist component
-  return (
+  return (  // Returning the JSX for the Artist component
     <div className="artist-page">
      
       {/* BACKGROUND IMAGE LAYER */}

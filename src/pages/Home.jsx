@@ -7,7 +7,7 @@ import Artist from "./Artist";   // Importing the Artist component
 import Cle from "./cle";   // Importing the Cle component
 import Subscribe from "./Subscribe"; // Importing the Subscribe component
 export default function Home() {  // Defining the Home component
-  return (
+  return (  // Returning the JSX for the Home component
     <div className="home">
 
       <section className="section hero">

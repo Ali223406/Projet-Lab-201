@@ -29,7 +29,7 @@ function App() {
 
           <Routes>
 
-            {/* 🌐 SITE PUBLIC */}
+            {/*  SITE PUBLIC */}
             <Route path="/" element={<Home />} />
             <Route path="/album" element={<Album />} />
             <Route path="/tour" element={<Tour />} />

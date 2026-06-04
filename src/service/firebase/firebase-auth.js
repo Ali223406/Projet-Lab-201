@@ -1,13 +1,13 @@
 import {
-  createUserWithEmailAndPassword,
-  getAuth,
-  signInWithEmailAndPassword,
-  signOut,
-} from "firebase/auth";
+  createUserWithEmailAndPassword,  // Function to create a new user with email and password
+  getAuth,  // Function to get the Firebase authentication instance
+  signInWithEmailAndPassword,  // Function to sign in a user with email and password
+  signOut,  // Function to sign out the current user
+} from "firebase/auth";  // Importing necessary functions from Firebase authentication
 
-import app from "./firebase-config";
+import app from "./firebase-config";  // Importing the Firebase app configuration
 
-const auth = getAuth(app);
+const auth = getAuth(app);  // Initializing the Firebase authentication instance with the app configuration
 
 export default auth;
 

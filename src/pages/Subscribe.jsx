@@ -1,18 +1,18 @@
-import "./Subscribe.css";
-import { FaFacebook, FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
-import { useState } from "react";
+import "./Subscribe.css";  // Importing CSS for the Subscribe component
+import { FaFacebook, FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";  // Importing social media icons from react-icons library
+import { useState } from "react";  // Importing useState hook from React for managing state
 
-export default function Subscribe() {
-   const [current, setCurrent] = useState(0);
+export default function Subscribe() {  // Defining the Subscribe component
+   const [current, setCurrent] = useState(0);  // State to track the current slide in the image gallery
 
   const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % 3);
+    setCurrent((prev) => (prev + 1) % 3);  // Function to move to the next slide, wrapping around to the first slide after the last one
   };
 
   const prevSlide = () => {
-    setCurrent((prev) => (prev - 1 + 3) % 3);
+    setCurrent((prev) => (prev - 1 + 3) % 3);  // Function to move to the previous slide, wrapping around to the last slide if currently on the first one
   };
-  return (
+  return (  // Returning the JSX for the Subscribe component
     <div className="subscribe-page">
 
       <div className="subscribe-overlay" />

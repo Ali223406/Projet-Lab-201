@@ -1,5 +1,5 @@
-export default function Footer() {
-  return (
+export default function Footer() {  // Defining the Footer component
+  return (   // Returning the JSX for the Footer component
     <div className="footer-page">
 
       <p>

@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Blog.css";
+import React from "react";  // Importing React library
+import { Link } from "react-router-dom";  // Importing Link component from react-router-dom for navigation
+import "./Blog.css";  // Importing CSS for the Blog component
 
-export default function Blog() {
+export default function Blog() {  // Defining the Blog component
   return (
     <div className="blog-page">
       <h1>STOVE — Blog</h1>

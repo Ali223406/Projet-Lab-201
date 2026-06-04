@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from "react";
-import { db } from "../service/firebase/firebase-config";
-import { collection, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";  // Importing React and necessary hooks
+import { db } from "../service/firebase/firebase-config";  // Importing Firebase database configuration
+import { collection, getDocs } from "firebase/firestore";  // Importing Firestore functions for database operations
 import "./tour.css";
 
-export default function Tour() {
-  const [concerts, setConcerts] = useState([]);
+export default function Tour() {   // Defining the Tour component
+  const [concerts, setConcerts] = useState([]);  // State to store the list of concerts fetched from the database
   const [loading, setLoading] = useState(true);
 
-  const fetchConcerts = async () => {
+  const fetchConcerts = async () => {  // Function to fetch concerts from the Firestore database
     try {
-      const snapshot = await getDocs(collection(db, "concerts"));
+      const snapshot = await getDocs(collection(db, "concerts"));  // Getting all documents from the "concerts" collection
 
-      const list = snapshot.docs.map((doc) => ({
+      const list = snapshot.docs.map((doc) => ({  // Mapping over the documents to create a list of concerts with their data and ID
         id: doc.id,
         ...doc.data(),
       }));
 
-      setConcerts(list);
+      setConcerts(list);  // Updating the state with the fetched concerts
     } catch (error) {
-      console.error("Error fetching concerts:", error);
+      console.error("Error fetching concerts:", error); // Logging any errors that occur during the fetch operation
     } finally {
       setLoading(false);
     }
   };
 
-  useEffect(() => {
+  useEffect(() => {  // Using useEffect to fetch concerts when the component mounts
     fetchConcerts();
   }, []);
 
-  return (
+  return (  // Returning the JSX for the Tour component
   <div className="tour-page">
 
     <div className="tour-bg" />

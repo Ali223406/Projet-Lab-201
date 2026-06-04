@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { db } from "../service/firebase/firebase-config";
-import { collection, addDoc } from "firebase/firestore";
+import { useState } from "react";  // Importing useState hook from React for managing state
+import { db } from "../service/firebase/firebase-config"; // Importing Firebase database configuration
+import { collection, addDoc } from "firebase/firestore"; // Importing Firestore functions for adding documents
 
-export default function ConcertForm({ onAdd }) {
-  const [ville, setVille] = useState("");
-  const [date, setDate] = useState("");
-  const [lieu, setLieu] = useState("");
+export default function ConcertForm({ onAdd }) { // Defining the ConcertForm component which takes an optional onAdd prop for refreshing the parent component after adding a concert
+  const [ville, setVille] = useState("");  // State for the city input
+  const [date, setDate] = useState("");  // State for the date input
+  const [lieu, setLieu] = useState("");  // State for the venue input
   const [pays, setPays] = useState("");
   const [soldOut, setSoldOut] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {  // Function to handle the form submission for adding a new concert
     e.preventDefault();
 
-    if (!ville || !date || !lieu || !pays) return;
+    if (!ville || !date || !lieu || !pays) return;  // Check if all required fields are filled, if not, return early
 
     setLoading(true);
-
+ 
     try {
-      await addDoc(collection(db, "concerts"), {
+      await addDoc(collection(db, "concerts"), {   // Adding a new document to the "concerts" collection in Firestore with the form data
         ville,
         date,
         lieu,
@@ -42,7 +42,7 @@ export default function ConcertForm({ onAdd }) {
     }
   };
 
-  return (
+  return (  // Returning the JSX for the ConcertForm component, which includes a form with inputs for city, date, venue, country, and sold out status, as well as a submit button
     <form onSubmit={handleSubmit}>
       <h3>Ajouter un concert</h3>
 
