@@ -19,7 +19,7 @@ body {
   position: relative;
   text-align: center;
   color: #fff;
-  max-width: 700px;
+ 
 }
 
 .overlay {
@@ -342,4 +342,39 @@ body {
 .logout-btn:hover {
   background: #6d2505;
   transform: translateY(-2px);
+}
+@media (max-width: 1024px) {
+
+  .content h1 {
+    font-size: 42px;
+    margin-top: 20px;
+  }
+
+  .panel {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .concert-list {
+    padding: 0 10px;
+  }
+
+  .ticket-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ticket-divider {
+    display: none;
+  }
+
+  .ticket-status {
+    text-align: left;
+  }
+
+  .logout-btn {
+    right: 10px;
+    top: 10px;
+  }
 }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&family=Inknut+Antiqua:wght@300;400;500;600;700&display=swap');
 
 .blog-page {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   position: relative;
 
@@ -152,4 +152,45 @@
 
 .blog-card:hover .blog-read {
   transform: translateX(6px);
+}
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .blog-page {
+    padding: 80px 0;
+    background-attachment: scroll;
+  }
+
+  .blog-title,
+  .blog-page h1 {
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+
+  .blog-subtitle {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .blog-card {
+    padding: 20px;
+  }
+
+  .blog-card h2 {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .blog-card h3 {
+    font-size: 20px;
+  }
+
+  .blog-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .blog-read {
+    font-size: 14px;
+  }
 }

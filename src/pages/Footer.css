@@ -1,0 +1,25 @@
+.footer-page {
+  padding: 40px;
+  background: #412e1a;
+  color: white;
+  text-align: center;
+  font-family: Georgia, serif;
+}
+
+.footer-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #c8a27a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

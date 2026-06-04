@@ -1,7 +1,17 @@
 import "./Subscribe.css";
 import { FaFacebook, FaInstagram, FaTiktok, FaXTwitter } from "react-icons/fa6";
+import { useState } from "react";
 
 export default function Subscribe() {
+   const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % 3);
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + 3) % 3);
+  };
   return (
     <div className="subscribe-page">
 
@@ -9,31 +19,31 @@ export default function Subscribe() {
 
       {/* TOP IMAGES */}
       <div className="subscribe-gallery">
-       <button className="arrow left">‹</button>
-  <div className="polaroid">
+       <button className="arrow left" onClick={prevSlide}>
+          ‹
+        </button>
+  <div className={`polaroid ${current === 0 ? "active" : ""}`}>
         <img src="/images/lanaa1.jpeg" alt="Lanaa 1" />
         <span>2012</span>
       </div>
-      <div className="polaroid">
+      <div className={`polaroid ${current === 1 ? "active" : ""}`}>
         <img src="/images/lanaa2.jpeg" alt="Lanaa 2" />
         <span>2015</span>
       </div>
-      <div className="polaroid">
+      <div className={`polaroid ${current === 2 ? "active" : ""}`}>
         <img src="/images/lanaa3.jpeg" alt="Lanaa 3" />
         <span>2017</span>
       </div>
       
-      <button className="arrow right">›</button>
+      <button className="arrow right" onClick={nextSlide}>
+        ›
+      </button>
       </div>
 
 
 
       {/* CONTENT */}
-  <div className="subscribe-dots">
-  <span className="dot active"></span>
-  <span className="dot"></span>
-  <span className="dot"></span>
-</div>
+ 
 <div className="subscribe-main">
 
   <div className="subscribe-content">

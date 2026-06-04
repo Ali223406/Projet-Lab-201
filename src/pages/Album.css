@@ -211,3 +211,53 @@
   border-radius: 14px;
   margin-top: 20px;
 }
+@media (max-width: 768px) {
+
+  .album-container {
+    padding: 0 20px;
+  }
+
+  .album-title {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .album-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .album-left,
+  .album-right {
+    min-width: 100%;
+  }
+
+  .album-cover img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .album-buttons {
+    position: static;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .album-buttons button {
+    width: 200px;
+  }
+
+  .album-tracklist {
+    margin-top: 30px;
+  }
+
+  .album-tracklist h3 {
+    margin-top: 20px;
+  }
+
+  .album-car img {
+    width: 100%;
+    max-width: 280px;
+  }
+}

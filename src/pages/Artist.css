@@ -149,3 +149,45 @@
   animation: spin 2s linear infinite;
   transform: scale(1.05);
 }
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .artist-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+    padding: 40px 20px;
+  }
+
+  .artist-title {
+    position: static;
+    transform: none;
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  .artist-image img {
+    width: 240px;
+    max-width: 100%;
+  }
+
+  .artist-text {
+    max-width: 100%;
+  }
+
+  .artist-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .artist-cards {
+    justify-content: center;
+  }
+
+  .artist-bottom-image {
+    width: 140px;
+    right: 10px;
+    bottom: -60px;
+  }
+}

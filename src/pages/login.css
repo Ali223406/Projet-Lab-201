@@ -98,3 +98,18 @@ body {
   opacity: 0.6;
   cursor: not-allowed;
 }
+@media (max-width: 1024px) {
+
+  .login-card {
+    max-width: 380px;
+    padding: 25px;
+  }
+
+  .login-title {
+    font-size: 30px;
+  }
+
+  .login-subtitle {
+    font-size: 13px;
+  }
+}
